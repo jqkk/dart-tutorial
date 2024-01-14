@@ -1,15 +1,19 @@
-multiply({
+int multiply({
   required int a,
   required int b,
 }) {
   return a * b;
 }
 
-addDay({
+DateTime addDay({
   required DateTime date,
   int day = 1,
 }) {
   return date.add(Duration(days: day));
+}
+
+DateTime subtractDay(DateTime date, [int day = 1]) {
+  return date.subtract(Duration(days: day));
 }
 
 void main() {
@@ -17,4 +21,6 @@ void main() {
   final currentDate = DateTime.now();
   final tomorrow = addDay(date: currentDate, day: 1);
   print(tomorrow);
+  final yesterday = subtractDay(currentDate);
+  print(yesterday);
 }
