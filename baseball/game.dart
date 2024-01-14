@@ -6,7 +6,7 @@ class BaseballGame {
   void createAnswer() {
     do {
       _answer = Random().nextInt(900) + 100;
-    } while (!validateDuplicate(input: _answer));
+    } while (!validateDuplicated(input: _answer));
   }
 
   List<int> _splitNumToList({required int num}) =>
@@ -14,7 +14,7 @@ class BaseballGame {
 
   List<int> get splitAnswer => _splitNumToList(num: _answer);
 
-  bool validateDuplicate({required int input}) {
+  bool validateDuplicated({required int input}) {
     final inputList = _splitNumToList(num: input);
     return inputList.toSet().length == inputList.length;
   }

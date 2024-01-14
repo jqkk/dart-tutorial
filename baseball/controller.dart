@@ -47,7 +47,7 @@ class BaseballController {
       this.view.displayInputNumLengthError();
       return false;
     }
-    if (!this.game.validateDuplicate(input: input)) {
+    if (!this.game.validateDuplicated(input: input)) {
       this.view.displayInvalidInputError();
       return false;
     }
